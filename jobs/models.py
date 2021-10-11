@@ -5,3 +5,4 @@ from django.db.models.fields.files import ImageField
 class Job(models.Model):
     image = models.ImageField(upload_to='images/')
     summary = models.CharField(max_length=200)
+    
