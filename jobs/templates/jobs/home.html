@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    {%load static%}
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.88.1">
-    
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'jobs/home.css' %}">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/album/">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     
 
     <!-- Bootstrap core CSS -->
@@ -74,39 +75,43 @@
 </header>
 
 <main>
-
-
-  <div class="card bg-dark text-white" style="text-align: center;">
-    <img src="{% static 'resized1.jpg'%}" class="card-img" alt="...">
-    <div class="card-img-overlay" >
-      <h5 class="card-title fw-bolder" style="text-shadow: 3px 3px 6px black;">Hi! I'm Abdelhamid HADILI</h5>
-      <p class="card-text"  style="text-shadow: 3px 3px 6px black;">Hello and welcome to my portfolio, here you can find my resume, the projects i worked on and my blog. check them out :).</p>
+  <div class="about">
+    <div class="text-box">
+      <h5 id="Title"  >Hi! I'm Abdelhamid HADILI a web developer based in Mohammedia</h5>
+      <p  id="Title-text">Specializing in Django and react. As a start i created this portfolio to share my project and get in touch with YOU.</p>
       <p>
         <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=hadili.Abdelhamid@gmail.com" class="btn btn-primary my-2">Email Me</a>
       </p>
     </div>
-  </div>
-  <h2 class="py-4" style="text-align: center; background-color: darkgray;">My Projects</h2>
- 
-  <div class="album py-5 bg-light">
-    <div class="container">
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {% for job in jobs.all%}
-                <div class="col d-flex">
-                <div class="card shadow-sm flex-fill">
-                    <img src="{{ job.image.url}}" alt="">
-                    <div class="card-body">
-                      <p class="text-center">{{job.title}}</p>
-                    <p class="card-text">{{job.summary}}</p>
-
-                    </div>
-                </div>
-                </div>
-            {% endfor%}
-      </div>
+    <div class="image">
+      <img src="{% static 'resized2.jpg'%}" alt="...">
     </div>
+
   </div>
+         <!-- Topic Cards -->
+         <div id="cards_landscape_wrap-2">
+          <div class="container">
+              <div class="row">
+                {% for job in jobs.all%}
+                  <div class="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                      <a target="_blank" href="{{ job.github }}">
+                          <div class="card-flyer">
+                              <div class="text-box">
+                                  <div class="image-box">
+                                      <img src="{{ job.image.url}}" alt="" />
+                                  </div>
+                                  <div class="text-container">
+                                      <h6>{{job.title}}</h6>
+                                      <p>{{job.summary}}</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                {% endfor%}
+              </div>
+          </div>
+        </div>
 
 </main>
 
@@ -123,7 +128,9 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
       
   </body>
 </html>

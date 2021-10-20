@@ -1,54 +1,55 @@
+
+
 body {
     font-family: Arial;
     background: #f1f1f1;
-  }
+}
   
-  /* Header/Blog Title */
-  .header {
+/* Header/Blog Title */
+.header {
     padding: 30px;
     font-size: 40px;
     text-align: center;
     background: white;
-  }
+}
   
-  /* Create two unequal columns that floats next to each other */
-  /* Left column */
-  .row .leftcolumn {
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.row .leftcolumn {
     float: left;
     width: 60%;
-  }
+}
   
-  /* Right column */
-  .row .rightcolumn {
+/* Right column */
+.row .rightcolumn {
     float: left;
     width: 40%;
     padding-left: 20px;
-  }
+}
 
-  /* Add a card effect for articles */
-  .row .card {
+/* Add a card effect for articles */
+.row .card {
     background-color: white;
     padding: 20px;
     margin-top: 20px;
-  }
+}
   
-  /* Clear floats after the columns */
-  .row:after {
+/* Clear floats after the columns */
+.row:after {
     content: "";
     display: table;
     clear: both;
-  }
-  
+}
 
-  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 800px) {
-    .row .leftcolumn{
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+  .row .leftcolumn{
         width: 100%;
         padding: 0;
-    } 
+  } 
     
-    .row .rightcolumn {
+  .row .rightcolumn {
       width: 100%;
       padding: 0;
-    }
   }
+}
